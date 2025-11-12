@@ -23,4 +23,23 @@
       cards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
-        
+        });
+      });
+
+      // Hamburger menu functionality
+      const hamburger = document.querySelector('.hamburger-menu');
+      const menu = document.querySelector('.menu');
+
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        menu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            menu.classList.remove('active');
+          });
+        });
+      }
+    
